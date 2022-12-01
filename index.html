@@ -79,7 +79,7 @@
                             this.y + this.height + this.speed[1] < rectPos[1] + rectBounds[1] &&
                             this.x + this.width + this.speed[0] >= rectPos[0] &&
                             this.x - this.width < rectPos[0] + rectBounds[0] + this.speed[1] && this.speed[1] > 0) {
-                            this.speed[1] = -1
+                            this.speed[1] = -1*(this.bounces/10)
                             this.bounces++;
                         }
                         break
@@ -88,7 +88,7 @@
                             this.y - this.height + this.speed[1] < rectPos[1] + rectBounds[1] &&
                             this.x + this.width + this.speed[0] >= rectPos[0] &&
                             this.x - this.width < rectPos[0] + rectBounds[0] + this.speed[1] && this.speed[1] < 0) {
-                            this.speed[1] = 1
+                            this.speed[1] = 1*(this.bounces/10)
                             this.bounces++;
                         }
                         break
