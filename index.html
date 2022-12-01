@@ -79,7 +79,7 @@
                             this.y + this.height + this.speed[1] < rectPos[1] + rectBounds[1] &&
                             this.x + this.width + this.speed[0] >= rectPos[0] &&
                             this.x - this.width < rectPos[0] + rectBounds[0] + this.speed[1] && this.speed[1] > 0) {
-                            this.speed[1] = -4
+                            this.speed[1] = -1
                             this.bounces++;
                         }
                         break
@@ -88,24 +88,24 @@
                             this.y - this.height + this.speed[1] < rectPos[1] + rectBounds[1] &&
                             this.x + this.width + this.speed[0] >= rectPos[0] &&
                             this.x - this.width < rectPos[0] + rectBounds[0] + this.speed[1] && this.speed[1] < 0) {
-                            this.speed[1] = 4
+                            this.speed[1] = 1
                             this.bounces++;
                         }
                         break
                 }
             }
             boundsCheck() {
-                if (this.x > canvas.width - this.width) this.speed[0] = -4;
-                if (this.x < this.width) this.speed[0] = 4;
+                if (this.x > canvas.width - this.width) this.speed[0] = -1;
+                if (this.x < this.width) this.speed[0] = 1;
                 if (this.y < this.height) {
                     this.bounces = 0;
-                    this.speed[1] = -4
+                    this.speed[1] = -1
                     this.x = canvas.width / 2
                     this.y = (canvas.height / 100) * 80
                 };
                 if (this.y > canvas.height - this.height) {
                     this.bounces = 0;
-                    this.speed[1] = -4
+                    this.speed[1] = -1
                     this.x = canvas.width / 2
                     this.y = (canvas.height / 100) * 80
                 }
@@ -129,7 +129,7 @@
         let score = new Font(0, "white", 100, canvas.width / 2, canvas.height / 2, "arial")
         let rectangle = new Rectangle("white", 120, 15, canvas.width / 2, (canvas.height / 100) * 90);
         let rectangle1 = new Rectangle("white", 120, 15, canvas.width / 2, (canvas.height / 100) * 10);
-        let ball = new Ball("white", 6, 6, canvas.width / 2, canvas.height / 2, [-4, -4], 0)
+        let ball = new Ball("white", 1, 1, canvas.width / 2, canvas.height / 2, [-4, -4], 0)
         document.addEventListener("mousemove", (e) => {
             rectangle.moveBat(e, 1)
             rectangle1.moveBat(e, -1)
